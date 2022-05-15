@@ -35,8 +35,8 @@
     - name: "install python for Ansible."
       become: true
       apt:
-        raw: test -e /usr/bin/python3 || (apt -y update && apt install -y python3)
-        changed_when: false
+        name: python3
+        update_cache: yes
 
     - setup:
 
