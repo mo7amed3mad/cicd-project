@@ -2,28 +2,28 @@ version: 2.1
 
 commands:
 
-  install aws-cli:
-    description: install aws cli for our jobs
+   install aws-cli:
+      description: install aws cli for our jobs
   
-    steps:
-      - run:
-          name: install aws-cli
-          command: |
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-            unzip awscliv2.zip
-            sudo ./aws/install1
+     steps:
+       - run:
+           name: install aws-cli
+           command: |
+             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+             unzip awscliv2.zip
+             sudo ./aws/install1
 
-  install ansible:
-    description: install ansible for our jobs
+   install ansible:
+      description: install ansible for our jobs
   
-    steps:
-      - run:
-          name: install ansible
-          command: |
-            sudo apt update
-            sudo apt install software-properties-common
-            sudo add-apt-repository --yes --update ppa:ansible/ansible
-            sudo apt install ansible
+     steps:
+       - run:
+           name: install ansible
+           command: |
+             sudo apt update
+             sudo apt install software-properties-common
+             sudo add-apt-repository --yes --update ppa:ansible/ansible
+             sudo apt install ansible
 
 #   destroy-environment:
 #     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
