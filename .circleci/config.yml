@@ -1,6 +1,6 @@
 version: 2.1
 
- commands:
+commands:
 
   install aws-cli:
     description: install aws cli for our jobs
