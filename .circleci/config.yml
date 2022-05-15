@@ -1,41 +1,39 @@
 version: 2.1
 
 commands:
+  install aws_cli:
+    description: install aws cli for our jobs
+    steps:
+      - run:
+          name: install aws_cli
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install1
 
-   install aws_cli:
-      description: install aws cli for our jobs
-  
-     steps:
-       - run:
-           name: install aws_cli
-           command: |
-             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-             unzip awscliv2.zip
-             sudo ./aws/install1
+  install ansible:
+    description: install ansible for our jobs
 
-   install ansible:
-      description: install ansible for our jobs
-  
-     steps:
-       - run:
-           name: install ansible
-           command: |
-             sudo apt update
-             sudo apt install software-properties-common
-             sudo add-apt-repository --yes --update ppa:ansible/ansible
-             sudo apt install ansible
+    steps:
+      - run:
+          name: install ansible
+          command: |
+            sudo apt update
+            sudo apt install software-properties-common
+            sudo add-apt-repository --yes --update ppa:ansible/ansible
+            sudo apt install ansible
 
-#   destroy-environment:
-#     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
-#     parameters:
-#       # Add parameter here   
-#     steps:
-#       - run:
-#           name: Destroy environments
-#           when: on_fail
-#           command: |
-#             # Your code here
-#             exit 1
+  # destroy-environment:
+  #   description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
+  #   parameters:
+  #     # Add parameter here   
+  #   steps:
+  #     - run:
+  #         name: Destroy environments
+  #         when: on_fail
+  #         command: |
+  #           # Your code here
+  #           exit 1
 
 #   revert-migrations:
 #     description: Revert the last migration if successfully run in the current workflow.
