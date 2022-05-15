@@ -27,7 +27,7 @@
   debug:
     msg: "{{ execute_node.stdout_lines }}"
 
-- name: "conf pm2 start as svc"
-- become: true
+- name: conf pm2 start as svc
+  become: true
   shell: |
     env PATH=$PATH:/usr/local/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu
