@@ -1,7 +1,7 @@
 version: 2.1
 
 commands:
-  install aws_cli:
+  install_aws_cli:
     description: install aws cli for our jobs
     steps:
       - run:
@@ -11,7 +11,7 @@ commands:
             unzip awscliv2.zip
             sudo ./aws/install1
 
-  install ansible:
+  install_ansible:
     description: install ansible for our jobs
 
     steps:
@@ -153,7 +153,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - install aws_cli
+      - install_aws_cli
       - run:
           name: Ensure back-end infrastructure exists
           command: |
