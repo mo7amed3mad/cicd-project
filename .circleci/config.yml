@@ -2,12 +2,12 @@ version: 2.1
 
 commands:
 
-   install aws-cli:
+   install aws_cli:
       description: install aws cli for our jobs
   
      steps:
        - run:
-           name: install aws-cli
+           name: install aws_cli
            command: |
              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
              unzip awscliv2.zip
@@ -155,7 +155,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - install aws-cli
+      - install aws_cli
       - run:
           name: Ensure back-end infrastructure exists
           command: |
