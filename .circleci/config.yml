@@ -152,7 +152,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: cimg/node:stable
+      - image: cimg/base:stable
     steps:
       - checkout
       - install aws-cli
