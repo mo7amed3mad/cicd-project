@@ -244,7 +244,6 @@ jobs:
       - checkout
       - install_aws_cli
       - install_nodejs
-
       - restore_cache:
           keys: [frontend-build]
 
@@ -377,7 +376,7 @@ jobs:
       - destroy-environment
       - revert-migrations  
 
-cleanup:
+  cleanup:
     docker:
       - image: cimg/base:stable
     steps:
@@ -385,7 +384,7 @@ cleanup:
       - install_aws_cli
       - install_nodejs
       - run:
-          name: Remove old stacks and files
+          name: Remove old stacks and files from cloudformation
           command: |
             export STACKS=($(aws cloudformation list-stacks --query "StackSummaries[*].StackName" \
                         --stack-status-filter CREATE_COMPLETE --no-paginate --output text))
