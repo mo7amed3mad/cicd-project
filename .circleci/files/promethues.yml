@@ -4,6 +4,11 @@ Description: >
 
 Resources:
 
+  MyEIP:
+  Type: AWS::EC2::EIP
+  Properties:
+    InstanceId: !Ref EC2Instance
+
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
