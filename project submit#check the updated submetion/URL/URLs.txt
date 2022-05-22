@@ -3,5 +3,3 @@ https://github.com/mo7amed3mad/cicd-project
 http://udapeople-868f3b8.s3-website-us-east-1.amazonaws.com/#/employees
 
 http://d232ip1fvgvedn.cloudfront.net/#/employees
-
-http://3.232.188.147:3030/api/status
